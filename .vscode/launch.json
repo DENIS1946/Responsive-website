@@ -1,0 +1,21 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "firefox",
+      "request": "launch",
+      "name": "Launch Firefox",
+      "url": "http://localhost:5500",
+      "webRoot": "${workspaceFolder}",
+      "reAttach": true,
+      "pathMappings": []
+    },
+    {
+      "type": "firefox",
+      "request": "launch",
+      "name": "Open with Firefox",
+      "file": "${workspaceFolder}/index.html",
+      "reAttach": true
+    }
+  ]
+}
