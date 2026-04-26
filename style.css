@@ -156,8 +156,8 @@
       }
     }
 
-    .topnav__item {
-    }
+    /* .topnav__item {
+    } */
 
     .topnav__link {
       font-size: var(--font-size-topnav);
