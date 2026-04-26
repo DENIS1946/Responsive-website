@@ -1,4 +1,4 @@
 {
-  "liveServer.settings.CustomBrowser": "firefox",
-  "open-in-browser.default": "firefox"
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true
 }
