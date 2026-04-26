@@ -1,4 +1,10 @@
 {
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.expand": false,
+  "explorer.fileNesting.patterns": {
+    "favicon.ico": "favicon.svg, favicon-*.png, apple-touch-icon.png, site.webmanifest, web-app-manifest-*.png, desktop.ini",
+    "README.md": "LICENSE"
+  }
 }
