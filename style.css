@@ -4,18 +4,18 @@
   /* source-sans-3-regular - latin */
   @font-face {
     font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: 'Source Sans 3';
+    font-family: "Source Sans 3";
     font-style: normal;
     font-weight: 400;
-    src: url('/fonts/source-sans-3-v19-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    src: url("/fonts/source-sans-3-v19-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
   }
   /* source-sans-3-700 - latin */
   @font-face {
     font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: 'Source Sans 3';
+    font-family: "Source Sans 3";
     font-style: normal;
     font-weight: 700;
-    src: url('/fonts/source-sans-3-v19-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    src: url("/fonts/source-sans-3-v19-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
   }
 
   /* Fonts */
@@ -41,9 +41,6 @@
   }
 
   /* Colors */
-  /* Colors */
-  /* Colors */
-  /* Colors */
 
   :root {
     --c-white: hsl(0, 0%, 100%);
@@ -57,6 +54,7 @@
     --color-text-dark: var(--c-gray-dark);
     --color-text-light: var(--c-white);
     --color-hero-bg: var(--c-purple);
+    --color-header-bg: var(--c-purple);
     --color-button-primary-bg: var(--c-teal);
     --color-button-primary-text: var(--c-gray-dark);
     --color-button-secondary-bg: var(--c-transparent);
@@ -76,7 +74,7 @@
   }
 
   body {
-    font-family: 'Source Sans 3', Arial, Helvetica, sans-serif;
+    font-family: "Source Sans 3", Arial, Helvetica, sans-serif;
     line-height: 1.3;
     color: var(--color-text-dark);
   }
@@ -107,6 +105,7 @@
   picture,
   svg {
     max-width: 100%;
+    height: auto;
     display: block;
   }
 
@@ -117,6 +116,62 @@
 }
 
 @layer component {
+  .topnav {
+    background-color: var(--color-header-bg);
+
+    .topnav__wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-block: 12px;
+
+      @media (width >= calc(600 / 16 * 1rem)) {
+        padding-block: 20px;
+      }
+    }
+
+    .topnav__homelink {
+      &:hover {
+        opacity: 0.9;
+      }
+    }
+
+    .topnav__logo {
+      width: calc(70 / 16 * 1rem);
+      height: auto;
+
+      @media (width >= calc(600 / 16 * 1rem)) {
+        width: calc(128 / 16 * 1rem);
+      }
+    }
+
+    .topnav__links {
+      display: flex;
+      gap: 20px;
+      list-style-type: none;
+      padding: 0;
+
+      @media (width >= calc(600 / 16 * 1rem)) {
+        gap: 40px;
+      }
+    }
+
+    .topnav__item {
+    }
+
+    .topnav__link {
+      font-size: var(--font-size-topnav);
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--color-text-light);
+
+      &:hover {
+        text-decoration: underline 2px;
+        text-underline-offset: 4px;
+      }
+    }
+  }
 }
 
 @layer utility {
@@ -127,5 +182,14 @@
     width: 1px;
     height: 1px;
     overflow: hidden;
+
+    &.skip:focus {
+      left: 0;
+      width: auto;
+      height: auto;
+      background: #fff;
+      padding: 10px;
+      border: 1px solid;
+    }
   }
 }
